@@ -1,0 +1,67 @@
+@import "reset";
+@import "mixins";
+@import "vars";
+@import "icons";
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+body {
+  background-color: $BG_gray;
+  font-family: $bodyFont;
+  font-size: 1.4em;
+}
+
+h2 {
+  color: #036699;
+  font-style: underline;
+  font-size: 30px;
+}
+.container {
+  width: 100%;
+  margin: 50px;
+}
+
+.loader_container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #EDF3F4;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+
+  .wave_container {
+    position: relative;
+    top: -120px;
+  }
+
+  // FISH
+  .fish_container {
+    position: relative;
+    left: -10px;
+
+    #loader_fish {
+      position: absolute;
+    }
+  }
+
+  // WAVE
+  .svg_wave {
+    position: absolute;
+    top: 250px;
+  }
+  #wave2 {
+    left: 900px;
+  }
+}
+
+

@@ -1,0 +1,27 @@
+.icon {
+  position: absolute;
+  opacity: 0;
+  width: 75px;
+  height: 75px;
+  background-color: #c3d1db;
+}
+
+.icon_death {
+  background: url('data:image/svg+xml;charset=utf-8,' + $svg_death);
+  background-repeat: no-repeat;
+}
+
+.icon_beaker {
+  background: url('data:image/svg+xml;charset=utf-8,' + $svg_beaker);
+  background-repeat: no-repeat;
+}
+
+.icon_medicine {
+  background: url('data:image/svg+xml;charset=utf-8,' + $svg_medicine);
+  background-repeat: no-repeat;
+}
+
+.icon_rocket {
+  background: url('data:image/svg+xml;charset=utf-8,' + $svg_rocket);
+  background-repeat: no-repeat;
+}
