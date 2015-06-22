@@ -30,17 +30,16 @@ h2 {
 
 .loader_container {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 2px;
+  height: 2px;
+  top:50px;
   margin: 0 auto;
   overflow: hidden;
   background-color: #EDF3F4;
   border-radius: 200px 200px 200px 200px;
-  -moz-border-radius: 200px 200px 200px 200px;
-  -webkit-border-radius: 200px 200px 200px 200px;
 
   .wave_container {
-    position: relative;
+    position: absolute;
     top: -120px;
   }
 
@@ -54,10 +53,18 @@ h2 {
     }
   }
 
+  // RIPPLE
+  .ripple {
+    // position: relative;
+    // left: -3 0px;
+    // top: 180px;
+    display: none;
+  }
+
   // WAVE
   .svg_wave {
     position: absolute;
-    top: 250px;
+    top: 260px;
   }
   #wave2 {
     left: 900px;
