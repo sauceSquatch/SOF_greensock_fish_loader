@@ -2,6 +2,7 @@
 <head>
   <title>Greensock demo</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300|Oxygen:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -51,6 +52,20 @@
       </div>
     </div>
   </section>
+  <div class="controls">
+    <div>
+      <button id="play">play()</button>
+      <button id="pause">pause()</button>
+      <button id="reverse">reverse()</button>
+      <button id="resume">resume()</button>
+      <button id="restart">restart</button>
+    </div>
+    <div id="sliderWrapper">
+      <div id="slider_build"></div>
+      <div id="slider_wave"></div>
+      <div id="slider_fish"></div>
+    </div>
+  </div>
 </body>
 <script type="text/javascript" src="js/script.js"></script>
 <!-- add port listening for gulp-livereload -->

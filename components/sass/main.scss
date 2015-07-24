@@ -71,4 +71,20 @@ h2 {
   }
 }
 
+.controls {
+  // display: none;
+  position: absolute;
+  top: 420px;
+  width: 600px;
+  #slider{
+    width: 580px;
+    margin:10px auto;
+  }
+  .ui-widget-content {
+    background-color:rgba(200, 240, 200, 0.3);
+    margin: 10px 0 10px 0;
+  }
+  
+}
+
 

@@ -16,6 +16,7 @@ initBuild = function() {
   animate_buildOn();
   animate_wave();
   animate_fish();
+  init_controls();
 }
 
 animate_buildOn = function() {
@@ -51,3 +52,98 @@ killTweens = function() {
   wave_TL.pause();
   fish_TL.pause();
 }
+
+
+/* --- Control playback methods --- */
+
+init_controls = function() {
+  $("#play").click(function() {
+      build_TL.play();
+      wave_TL.play();
+      fish_TL.play();
+  });
+      
+  $("#pause").click(function() {
+      build_TL.pause();
+      wave_TL.pause();
+      fish_TL.pause();
+  });
+      
+  $("#reverse").click(function() {
+      build_TL.reverse();
+      wave_TL.reverse();
+      fish_TL.reverse();
+  });
+      
+  $("#resume").click(function() {
+      build_TL.resume();  
+      wave_TL.resume();  
+      fish_TL.resume();  
+  });
+      
+  $("#restart").click(function() {
+      build_TL.restart();
+      wave_TL.restart();
+      fish_TL.restart();
+  });
+
+  //when the timeline updates, call the update'Slider' function
+  build_TL.eventCallback("onUpdate", updateSlider_build);
+  wave_TL.eventCallback("onUpdate", updateSlider_wave);
+  fish_TL.eventCallback("onUpdate", updateSlider_fish);
+    
+  $("#slider_build").slider({
+    range: false,
+    min: 0,
+    max: 100,
+    step:.1,
+    slide: function ( event, ui ) {
+      build_TL.pause();
+      //adjust the timeline's progress() based on slider value
+      build_TL.progress( ui.value/100 );
+      }
+  });
+
+  $("#slider_wave").slider({
+    range: false,
+    min: 0,
+    max: 100,
+    step:.1,
+    slide: function ( event, ui ) {
+      wave_TL.pause();
+      //adjust the timeline's progress() based on slider value
+      wave_TL.progress( ui.value/100 );
+      }
+  }); 
+
+  $("#slider_fish").slider({
+    range: false,
+    min: 0,
+    max: 100,
+    step:.1,
+    slide: function ( event, ui ) {
+      fish_TL.pause();
+      //adjust the timeline's progress() based on slider value
+      fish_TL.progress( ui.value/100 );
+      }
+  }); 
+      
+  function updateSlider_build() {
+    $("#slider_build").slider("value", build_TL.progress() *100);
+    console.log("slider_build: ", $("#slider_build"));
+  } 
+
+  function updateSlider_wave() {
+    $("#slider_wave").slider("value", wave_TL.progress() *100);
+    console.log("slider_wave: ", $("#slider_build"));
+  }  
+
+  function updateSlider_fish() {
+    $("#slider_fish").slider("value", fish_TL.progress() *100);
+    console.log("slider_fish: ", $("#slider_fish"));
+  }   
+
+  // build_TL.progress(1)
+}
+
+
